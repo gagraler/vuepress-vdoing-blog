@@ -77,7 +77,7 @@ module.exports = {
 
       // { text: '案例', link: '/pages/5d571c/' },
       { text: '关于我', link: '/pages/db78e2/' },
-      { text: 'Gitee', link: 'https://gitee.com/keington' },
+      { text: 'Gitee', link: 'https://gitee.com/keington/vuepress-vdoing-blog' },
       { text: 'Github', link: 'https://github.com/keington/vuepress-vdoing-blog.git'}
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
