@@ -29,8 +29,6 @@ npm run dev # or yarn dev
 ```
 
 ## LICENSE
-xugaoyi/vuepress-theme-vdoing[MIT License](https://github.com/xugaoyi/vuepress-theme-vdoing/blob/master/LICENSE)
-
-keington/vuepress-vdoing-blog[Apache-2.0 License](https://github.com/keington/vuepress-vdoing-blog/blob/f693331c7ab7c862a6824fa02183db11416f44ce/LICENSE)
+[MIT License](https://github.com/keington/vuepress-vdoing-blog/blob/b21bac74e61c04b6b71f024ebf0ab14ebe7f91c5/LICENSE)
 
 Copyright (c) 2021-2022 许怀安
