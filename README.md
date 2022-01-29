@@ -28,6 +28,9 @@ npm install # or yarn install
 npm run dev # or yarn dev
 ```
 
+## 联系我
+如有问题请在lssues提问，会不定期解答，或者也可以发送[邮件](mailto:keington@outlook.com)
+
 ## LICENSE
 [MIT License](https://github.com/keington/vuepress-vdoing-blog/blob/b21bac74e61c04b6b71f024ebf0ab14ebe7f91c5/LICENSE)
 
