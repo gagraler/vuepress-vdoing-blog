@@ -67,6 +67,17 @@ module.exports = {
         ],
       },
 
+      {
+        text: '其他', items:[
+          // 挖矿病毒部分
+          {
+            text: '博客搭建', items: [
+              { text: 'Vuepress搭建博客', link: '/pages/0737a0/' },
+            ],
+          },
+        ],
+      },
+
       // 资源部分
       // {
       //   text: '资源', items: [
