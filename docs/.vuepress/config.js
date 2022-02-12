@@ -62,6 +62,7 @@ module.exports = {
           {
             text: 'Linux', items: [
               { text: 'Linux下挖矿病毒排杀过程', link: '/pages/af9ce4/' },
+              { text: 'Linux主机巡检脚本', link: '/pages/11d270/' },
             ],
           },
         ],
