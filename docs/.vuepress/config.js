@@ -51,7 +51,14 @@ module.exports = {
               { text: 'HuTool', link: '/pages/5fedc1/'},
               { text: 'HuTool组件', link: '/pages/f83d9d/'},
             ]
-          }
+          },
+
+          // 其他部分
+          {
+            text: '其他', items: [
+              { text: 'Linux下使用命令systemctl管理部署Java jar包', link: '/pages/82aec0/'},
+            ]
+          },
         ],
       },
 
