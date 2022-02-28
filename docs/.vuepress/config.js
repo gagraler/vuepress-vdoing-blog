@@ -189,7 +189,7 @@ htmlModules,
     [
       'vuepress-plugin-baidu-tongji', // 百度统计
       {
-        hm: baiduCode || '64f419930ba742d288d4628e46aab674'
+        hm: baiduCode || '9b9b3e79c929cfce252e54a57c3833df'
       }
     ],
 
