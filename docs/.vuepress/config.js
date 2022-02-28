@@ -12,24 +12,24 @@ module.exports = {
   },
   serviceWorker: true, // 是否开启 PWA
   head: [ // 注入到页面<head> 中的标签
-    ['link', { rel: 'icon', href: 'https://v3.cn.vuejs.org/logo.png' }], //favicon，资源放在public文件夹
-    ['meta', { name: 'theme-color', content: '#11a8cd' }], // 移动浏览器主题颜色
+    ['link', {rel: 'icon', href: 'https://v3.cn.vuejs.org/logo.png'}], //favicon，资源放在public文件夹
+    ['meta', {name: 'theme-color', content: '#11a8cd'}], // 移动浏览器主题颜色
   ],
 
   // 主题配置
   themeConfig: {
     nav: [
-      { text: '首页', link: '/' },
+      {text: '首页', link: '/'},
 
       {
-        text: '后端', items:[
-            // gRPC部分
+        text: '后端', items: [
+          // gRPC部分
           {
             text: 'gRP笔记', items: [
-              { text: 'RPC', link: '/pages/52d5c3/' },
-              { text: 'gRPC', link: '/pages/a2f161/' },
-              { text: 'Hello gRPC', link: '/pages/793dcb/' },
-              { text: 'gRPC Bug', link: '/pages/2f674a/' },
+              {text: 'RPC', link: '/pages/52d5c3/'},
+              {text: 'gRPC', link: '/pages/a2f161/'},
+              {text: 'Hello gRPC', link: '/pages/793dcb/'},
+              {text: 'gRPC Bug', link: '/pages/2f674a/'},
             ],
           },
         ],
@@ -37,26 +37,26 @@ module.exports = {
 
       // Java部分
       {
-        text: 'Java', items:[
+        text: 'Java', items: [
           // 环境搭建部分
           {
             text: '环境搭建', items: [
-              { text: 'Windows下Java开发环境搭建', link: '/pages/a32ce8/' },
-              { text: 'Linux下Java运行环境搭建', link: '/pages/f22bdb/' },
+              {text: 'Windows下Java开发环境搭建', link: '/pages/a32ce8/'},
+              {text: 'Linux下Java运行环境搭建', link: '/pages/f22bdb/'},
             ],
           },
           // hutool笔记部分
           {
             text: 'HuTool笔记', items: [
-              { text: 'HuTool', link: '/pages/5fedc1/'},
-              { text: 'HuTool组件', link: '/pages/f83d9d/'},
+              {text: 'HuTool', link: '/pages/5fedc1/'},
+              {text: 'HuTool组件', link: '/pages/f83d9d/'},
             ]
           },
 
           // 其他部分
           {
             text: '其他', items: [
-              { text: 'Linux下使用命令systemctl管理部署Java jar包', link: '/pages/82aec0/'},
+              {text: 'Linux下使用命令systemctl管理部署Java jar包', link: '/pages/82aec0/'},
             ]
           },
         ],
@@ -64,23 +64,23 @@ module.exports = {
 
       // 运维部分
       {
-        text: '运维', items:[
+        text: '运维', items: [
           // 挖矿病毒部分
           {
             text: 'Linux', items: [
-              { text: 'Linux下挖矿病毒排杀过程', link: '/pages/af9ce4/' },
-              { text: 'Linux主机巡检脚本', link: '/pages/11d270/' },
+              {text: 'Linux下挖矿病毒排杀过程', link: '/pages/af9ce4/'},
+              {text: 'Linux主机巡检脚本', link: '/pages/11d270/'},
             ],
           },
         ],
       },
 
       {
-        text: '其他', items:[
+        text: '其他', items: [
           // 挖矿病毒部分
           {
             text: '博客搭建', items: [
-              { text: 'Vuepress搭建博客', link: '/pages/0737a0/' },
+              {text: 'Vuepress搭建博客', link: '/pages/0737a0/'},
             ],
           },
         ],
@@ -95,9 +95,9 @@ module.exports = {
       // },
 
       // { text: '案例', link: '/pages/5d571c/' },
-      { text: '关于我', link: '/pages/db78e2/' },
-      { text: 'Gitee', link: 'https://gitee.com/keington/vuepress-vdoing-blog' },
-      { text: 'Github', link: 'https://github.com/keington/vuepress-vdoing-blog.git'}
+      {text: '关于我', link: '/pages/db78e2/'},
+      {text: 'Gitee', link: 'https://gitee.com/keington/'},
+      {text: 'Github', link: 'https://github.com/keington/'}
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     logo: '/images/logo.jpg', // 导航栏logo
@@ -105,7 +105,7 @@ module.exports = {
     lastUpdated: '上次更新', // 更新的时间，及前缀文字   string | boolean (取值为git提交时间)
 
     // 以下配置是Vdoing主题改动的和新增的配置
-    sidebar: { mode: 'structuring', collapsable: false }, // 侧边栏  'structuring' | { mode: 'structuring', collapsable: Boolean} | 'auto' | 自定义    温馨提示：目录页数据依赖于结构化的侧边栏数据，如果你不设置为'structuring',将无法使用目录页
+    sidebar: {mode: 'structuring', collapsable: false}, // 侧边栏  'structuring' | { mode: 'structuring', collapsable: Boolean} | 'auto' | 自定义    温馨提示：目录页数据依赖于结构化的侧边栏数据，如果你不设置为'structuring',将无法使用目录页
 
     sidebarOpen: true, // 初始状态是否打开侧边栏，默认true
     updateBar: { // 最近更新栏
@@ -123,7 +123,7 @@ module.exports = {
 
     author: { // 文章默认的作者信息，可在md文件中单独配置此信息 String | {name: String, href: String}
       name: '许怀安', // 必需
-      link :  'https://github.com/keington', // 作者链接（可选）
+      link: 'https://github.com/keington', // 作者链接（可选）
     },
 
     // 博主信息 (显示在首页侧边栏)
@@ -149,16 +149,20 @@ module.exports = {
         {
           iconClass: 'icon-github',
           title: 'Github',
-          link: 'https://github.com/keington/vuepress-vdoing-blog.git'
+          link: 'https://github.com/keington/'
         }
       ]
     },
     footer: { // 页脚信息
       createYear: 2020, // 博客创建年份
-      copyrightInfo: '许怀安 | MIT License', // 博客版权信息，支持a标签
-    },
-    htmlModules,
-  },
+      // 博客版权信息，支持a标签
+      copyrightInfo: '许怀安 | MIT License <br> <a target="_blank" href="http://beian.miit.gov.cn/" >青ICP备2022000072号-1</a>' +
+                     '<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=63010302000386" >' +
+                     ' | 青公网安备 63010302000386号</a>'
+},
+
+htmlModules,
+},
 
   // 插件
   plugins: [
