@@ -8,6 +8,8 @@ categories:
 tags:
   - scripts
 ---
+  
+# Linux下使用命令systemctl管理部署Java jar包
 # 说明
 Java项目编译完后通常都是 **jar** 包跟 **war** 包，war包都是在tomcat里面通过tomcat的管理方式来管理，而jar包一般都是通过 **java -jar** 或者 **nohub java -jar**
 的方式来启动，而停止的话得先找出服务的进程ID，然后再kill掉，比较麻烦，使用systemctl来管理会更方便一点。
@@ -109,6 +111,6 @@ chmod 755 helloword.jar
 </build>
 ```
 
->本文作者：[许怀安](https://keington.github.io/)
+>本文作者：[许怀安](https://www.dbsecurity.com.cn/)
 ><br/>创作时间：2022.02.18
 ><br/>版权声明：本博客所有文章除特别声明外，均采用[BY-NC-SA](https://creativecommons.org/licenses/by-nc-sa/4.0/zh-CN/)许可协议。转载请禀明出处！
