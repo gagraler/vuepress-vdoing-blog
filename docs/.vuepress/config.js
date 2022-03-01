@@ -65,11 +65,18 @@ module.exports = {
       // 运维部分
       {
         text: '运维', items: [
-          // 挖矿病毒部分
+            // 挖矿病毒部分
           {
             text: 'Linux', items: [
               {text: 'Linux下挖矿病毒排杀过程', link: '/pages/af9ce4/'},
               {text: 'Linux主机巡检脚本', link: '/pages/11d270/'},
+            ],
+          },
+            // 内核升级
+          {
+            text: 'Centos内核版本升级', items: [
+              {text: '在线升级', link: '/pages/42150c/'},
+              {text: '离线升级', link: '/pages/79a802/'},
             ],
           },
         ],
