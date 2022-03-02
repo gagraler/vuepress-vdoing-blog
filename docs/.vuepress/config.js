@@ -84,12 +84,19 @@ module.exports = {
 
       {
         text: '其他', items: [
-          // 挖矿病毒部分
+          // 博客搭建
           {
             text: '博客搭建', items: [
               {text: 'Vuepress搭建博客', link: '/pages/0737a0/'},
             ],
           },
+          // 踩坑记录
+          {
+            text: '踩坑记录', items: [
+              {text: 'Nginx报错403', link: '/pages/9c7c7b/'},
+            ],
+          },
+
         ],
       },
 
