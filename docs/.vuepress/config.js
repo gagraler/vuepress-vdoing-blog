@@ -1,5 +1,6 @@
 const baiduCode = require('./config/baiduCode.js'); // 百度统计hm码
 const htmlModules = require('./config/htmlModules.js');
+const { readFileList, readTotalFileWords, readEachFileWords } = require('./webSiteInfo/readFile');
 
 module.exports = {
   theme: 'vdoing', // 使用依赖包主题
@@ -14,10 +15,29 @@ module.exports = {
   head: [ // 注入到页面<head> 中的标签
     ['link', {rel: 'icon', href: 'https://v3.cn.vuejs.org/logo.png'}], //favicon，资源放在public文件夹
     ['meta', {name: 'theme-color', content: '#11a8cd'}], // 移动浏览器主题颜色
+    ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }], //解决chorm网站统计不准确问题
+    ['link', { rel: 'stylesheet', href: 'https://at.alicdn.com/t/font_3077305_pt8umhrn4k9.css' }], //阿里在线矢量库
   ],
 
   // 主题配置
   themeConfig: {
+    // 站点配置（首页 & 文章页）
+    blogInfo: {
+      blogCreate: '2020', // 博客创建时间
+      indexView: true,  // 开启首页的访问量和排名统计，默认 true（开启）
+      pageView: true,  // 开启文章页的浏览量统计，默认 true（开启）
+      readingTime: true,  // 开启文章页的预计阅读时间，条件：开启 eachFileWords，默认 true（开启）。可在 eachFileWords 的 readEachFileWords 的第二个和第三个参数自定义，默认 1 分钟 300 中文、160 英文
+      eachFileWords: readEachFileWords([''], 300, 160),  // 开启每个文章页的字数。readEachFileWords(['xx']) 关闭 xx 目录（可多个，可不传参数）下的文章页字数和阅读时长，后面两个参数分别是 1 分钟里能阅读的中文字数和英文字数。无默认值。readEachFileWords() 方法默认排除了 article 为 false 的文章
+      mdFileCountType: 'archives',  // 开启文档数。1. archives 获取归档的文档数（默认）。2. 数组 readFileList(['xx']) 排除 xx 目录（可多个，可不传参数），获取其他目录的文档数。提示：readFileList() 获取 docs 下所有的 md 文档（除了 `.vuepress` 和 `@pages` 目录下的文档）
+      totalWords: 'archives',  // 开启本站文档总字数。1. archives 获取归档的文档数（使用 archives 条件：传入 eachFileWords，否则报错）。2. readTotalFileWords(['xx']) 排除 xx 目录（可多个，可不传参数），获取其他目录的文章字数。无默认值
+      moutedEvent: '.tags-wrapper',   // 首页的站点模块挂载在某个元素后面（支持多种选择器），指的是挂载在哪个兄弟元素的后面，默认是热门标签 '.tags-wrapper' 下面，提示：'.categories-wrapper' 会挂载在文章分类下面。'.blogger-wrapper' 会挂载在博客头像模块下面
+      // 下面两个选项：第一次获取访问量失败后的迭代时间
+      indexIteration: 2500,   // 如果首页获取访问量失败，则每隔多少时间后获取一次访问量，直到获取成功或获取 10 次后。默认 3 秒。注意：设置时间太低，可能导致访问量 + 2、+ 3 ......
+      pageIteration: 2500,    // 如果文章页获取访问量失败，则每隔多少时间后获取一次访问量，直到获取成功或获取 10 次后。默认 3 秒。注意：设置时间太低，可能导致访问量 + 2、+ 3 ......
+      // 说明：成功获取一次访问量，访问量 + 1，所以第一次获取失败后，设置的每个隔段重新获取时间，将会影响访问量的次数。如 100 可能每次获取访问量 + 3
+    },
+
+    // 导航
     nav: [
       {text: '首页', link: '/'},
 
@@ -112,6 +132,8 @@ module.exports = {
       {text: '关于我', link: '/pages/db78e2/'},
       {text: 'Gitee', link: 'https://gitee.com/keington/'},
       {text: 'Github', link: 'https://github.com/keington/'}
+
+
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
     logo: '/images/logo.jpg', // 导航栏logo
@@ -180,41 +202,44 @@ htmlModules,
 
   // 插件
   plugins: [
-
-    ['fulltext-search'], // 全文搜索
-
-    // ['thirdparty-search', { // 可以添加第三方搜索链接的搜索框（原官方搜索框的参数仍可用）
-    //   thirdparty: [ // 可选，默认 []
-    //     {
-    //       title: '在GitHub中搜索',
-    //       frontUrl: 'https://github.com/search?q=', // 搜索链接的前面部分
-    //       behindUrl: '' // 搜索链接的后面部分，可选，默认 ''
-    //     },
-    //     {
-    //       title: '在npm中搜索',
-    //       frontUrl: 'https://www.npmjs.com/search?q=',
-    //     },
-    //     {
-    //       title: '在Bing中搜索',
-    //       frontUrl: 'https://cn.bing.com/search?q='
-    //     }
-    //   ]
-    // }],
+    // 全文搜索
+    ['fulltext-search'],
+    ['thirdparty-search', { // 可以添加第三方搜索链接的搜索框（原官方搜索框的参数仍可用）
+      thirdparty: [ // 可选，默认 []
+        {
+          title: '在GitHub中搜索',
+          frontUrl: 'https://github.com/search?q=', // 搜索链接的前面部分
+          behindUrl: '' // 搜索链接的后面部分，可选，默认 ''
+        },
+        {
+          title: '在npm中搜索',
+          frontUrl: 'https://www.npmjs.com/search?q=',
+        },
+        {
+          title: '在Bing中搜索',
+          frontUrl: 'https://cn.bing.com/search?q='
+        }
+      ]
+    }],
+    // 百度统计
     [
-      'vuepress-plugin-baidu-tongji', // 百度统计
+      'vuepress-plugin-baidu-tongji',
       {
         hm: baiduCode || '9b9b3e79c929cfce252e54a57c3833df'
       }
     ],
 
-    ['one-click-copy', { // 代码块复制按钮
+    // 代码块复制按钮
+    ['one-click-copy', {
       copySelector: ['div[class*="language-"] pre', 'div[class*="aside-code"] aside'], // String or Array
       copyMessage: '复制成功', // default is 'Copy successfully and then paste it for use.'
       duration: 1000, // prompt message display time.
       showInMobile: false // whether to display on the mobile side, default: false.
     }],
+
+    // 放大图片
     [
-      'vuepress-plugin-zooming', // 放大图片
+      'vuepress-plugin-zooming',
       {
         selector: '.theme-vdoing-content img:not(.no-zoom)',
         options: {
@@ -222,13 +247,37 @@ htmlModules,
         },
       },
     ],
+    // "上次更新"时间格式
     [
-      '@vuepress/last-updated', // "上次更新"时间格式
+      '@vuepress/last-updated',
       {
         transformer: (timestamp, lang) => {
           const dayjs = require('dayjs') // https://day.js.org/
           return dayjs(timestamp).format('YYYY/MM/DD, HH:mm:ss')
         },
+      },
+    ],
+
+    // 评论插件
+    [
+      'vuepress-plugin-comment',
+      {
+        choosen: 'gitalk',
+        options: {
+          clientID: '98462e34407bd3137729',  // 你的client ID
+          clientSecret: 'ede026c8d4608b72b0a084318000e37248e6f8af',  // 你的client secret
+          repo: 'vuepress-vdoing-blog', // GitHub 仓库
+          owner: 'keington', // GitHub仓库所有者
+          admin: ['keington'], // 对仓库有写权限的人
+          // distractionFreeMode: true,
+          pagerDirection: 'last', // 'first'正序 | 'last'倒序
+          // 下面的不用修改，默认这些即可
+          id: '<%- (frontmatter.permalink || frontmatter.to.path).slice(-16) %>', //  页面的唯一标识,长度不能超过50
+          title: '「评论」<%- frontmatter.title %>', // GitHub issue 的标题
+          labels: ['Gitalk', 'Comment'], // GitHub issue 的标签
+          body:
+              '页面：<%- window.location.origin + (frontmatter.to.path || window.location.pathname) %>', // GitHub issue 的内容
+        }
       }
     ]
   ],
