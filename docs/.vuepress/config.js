@@ -13,10 +13,10 @@ module.exports = {
   },
   serviceWorker: true, // 是否开启 PWA
   head: [ // 注入到页面<head> 中的标签
-    ['link', {rel: 'icon', href: 'https://v3.cn.vuejs.org/logo.png'}], //favicon，资源放在public文件夹
+    ['link', {rel: 'icon', href: '/images/logo1.png'}], //favicon，资源放在public文件夹
     ['meta', {name: 'theme-color', content: '#11a8cd'}], // 移动浏览器主题颜色
     ['meta', { name: 'referrer', content: 'no-referrer-when-downgrade' }], //解决chorm网站统计不准确问题
-    ['link', { rel: 'stylesheet', href: 'https://at.alicdn.com/t/font_3077305_pt8umhrn4k9.css' }], //阿里在线矢量库
+    ['link', { rel: 'stylesheet', href: 'https://at.alicdn.com/t/font_1678482_4tbhmh589x.css' }], //阿里在线矢量库
   ],
 
   // 主题配置
@@ -41,8 +41,15 @@ module.exports = {
     nav: [
       {text: '首页', link: '/'},
 
+      // {
+      //   text: '后端', items: [
+      //
+      //   ],
+      // },
+
+      // Java部分
       {
-        text: '后端', items: [
+        text: 'Java', items: [
           // gRPC部分
           {
             text: 'gRP笔记', items: [
@@ -52,19 +59,7 @@ module.exports = {
               {text: 'gRPC Bug', link: '/pages/2f674a/'},
             ],
           },
-        ],
-      },
 
-      // Java部分
-      {
-        text: 'Java', items: [
-          // 环境搭建部分
-          {
-            text: '环境搭建', items: [
-              {text: 'Windows下Java开发环境搭建', link: '/pages/a32ce8/'},
-              {text: 'Linux下Java运行环境搭建', link: '/pages/f22bdb/'},
-            ],
-          },
           // hutool笔记部分
           {
             text: 'HuTool笔记', items: [
@@ -76,7 +71,7 @@ module.exports = {
           // 其他部分
           {
             text: '其他', items: [
-              {text: 'Linux下使用命令systemctl管理部署Java jar包', link: '/pages/82aec0/'},
+              {text: '使用systemctl命令管理部署Java jar包', link: '/pages/82aec0/'},
             ]
           },
         ],
@@ -104,12 +99,21 @@ module.exports = {
 
       {
         text: '其他', items: [
+          // 环境搭建
+          {
+            text: '环境搭建', items: [
+              {text: 'Windows下Java开发环境搭建', link: '/pages/a32ce8/'},
+              {text: 'Linux下Java运行环境搭建', link: '/pages/f22bdb/'},
+            ],
+          },
+
           // 博客搭建
           {
             text: '博客搭建', items: [
               {text: 'Vuepress搭建博客', link: '/pages/0737a0/'},
             ],
           },
+
           // 踩坑记录
           {
             text: '踩坑记录', items: [
@@ -132,7 +136,6 @@ module.exports = {
       {text: '关于我', link: '/pages/db78e2/'},
       {text: 'Gitee', link: 'https://gitee.com/keington/'},
       {text: 'Github', link: 'https://github.com/keington/'}
-
 
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
@@ -170,7 +173,7 @@ module.exports = {
     },
 
     social: { // 社交图标，显示于博主信息栏和页脚栏
-      iconfontCssFile: '//at.alicdn.com/t/font_1678482_u4nrnp8xp6g.css', // 可选，阿里图标库在线css文件地址，对于主题没有的图标可自由添加
+      iconfontCssFile: 'https://at.alicdn.com/t/font_1678482_4tbhmh589x.css', // 可选，阿里图标库在线css文件地址，对于主题没有的图标可自由添加
       icons: [
         {
           iconClass: 'icon-youjian',
@@ -186,7 +189,12 @@ module.exports = {
           iconClass: 'icon-github',
           title: 'Github',
           link: 'https://github.com/keington/'
-        }
+        },
+        {
+          iconClass: 'icon-gitee',
+          title: 'Gitee',
+          link: 'https://gitee.com/keington/'
+        },
       ]
     },
     footer: { // 页脚信息
@@ -206,21 +214,22 @@ htmlModules,
     ['fulltext-search'],
     ['thirdparty-search', { // 可以添加第三方搜索链接的搜索框（原官方搜索框的参数仍可用）
       thirdparty: [ // 可选，默认 []
-        {
-          title: '在GitHub中搜索',
-          frontUrl: 'https://github.com/search?q=', // 搜索链接的前面部分
-          behindUrl: '' // 搜索链接的后面部分，可选，默认 ''
-        },
-        {
-          title: '在npm中搜索',
-          frontUrl: 'https://www.npmjs.com/search?q=',
-        },
-        {
-          title: '在Bing中搜索',
-          frontUrl: 'https://cn.bing.com/search?q='
-        }
+        // {
+        //   title: '在GitHub中搜索',
+        //   frontUrl: 'https://github.com/search?q=', // 搜索链接的前面部分
+        //   behindUrl: '' // 搜索链接的后面部分，可选，默认 ''
+        // },
+        // {
+        //   title: '在npm中搜索',
+        //   frontUrl: 'https://www.npmjs.com/search?q=',
+        // },
+        // {
+        //   title: '在Bing中搜索',
+        //   frontUrl: 'https://cn.bing.com/search?q='
+        // }
       ]
     }],
+
     // 百度统计
     [
       'vuepress-plugin-baidu-tongji',
@@ -247,6 +256,7 @@ htmlModules,
         },
       },
     ],
+
     // "上次更新"时间格式
     [
       '@vuepress/last-updated',

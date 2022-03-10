@@ -5,7 +5,9 @@ heroText: XuHuaian,s Blog
 tagline: 记录自己的工作学习心得，争取当一条有梦想的咸鱼
 actionText: 开始探索之旅 →
 actionLink: /categories/
-bannerBg: none # auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
+# auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       
+# 提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
+bannerBg: none 
 
 features:
 - title: 关于我
