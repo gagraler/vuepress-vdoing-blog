@@ -16,10 +16,6 @@ WORKDIR /data/www
 # 复制配置文件到容器
 COPY blog.conf /etc/nginx/conf.d
 
-# 复制ssl证书到容器
-COPY cert/dbsecurity.com.cn.key /etc/nginx/cert
-COPY cert/dbsecurity.com.cn.pem /etc/nginx/cert
-
 # 复制构建后的文件到工作目录
 COPY /docs/.vuepress/dist  /data/www
 
