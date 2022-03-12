@@ -89,7 +89,7 @@ module.exports = {
           },
             // 内核升级
           {
-            text: 'Centos内核版本升级', items: [
+            text: 'Centos内核升级', items: [
               {text: '在线升级', link: '/pages/42150c/'},
               {text: '离线升级', link: '/pages/79a802/'},
             ],
