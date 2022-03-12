@@ -21,6 +21,6 @@ COPY blog.conf /etc/nginx/conf.d
 COPY /docs/.vuepress/dist  /data/www
 
 # 指定运行端口
-EXPOSE 443
+EXPOSE 80
 
 ENTRYPOINT nginx -g "daemon off;"
