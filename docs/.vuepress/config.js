@@ -111,6 +111,7 @@ module.exports = {
           {
             text: '博客搭建', items: [
               {text: 'Vuepress搭建博客', link: '/pages/0737a0/'},
+              {text: '微信云托管部署Vuepress', link: '/pages/c21fef/'}
             ],
           },
 
