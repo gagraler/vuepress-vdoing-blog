@@ -10,6 +10,7 @@ ENV LOG_DIR /data/log/nginx
 
 # 删除容器内默认的配置文件
 RUN rm -rf /etc/nginx/conf.d/default.conf
+
 # 指定工作目录
 WORKDIR /data/www
 
