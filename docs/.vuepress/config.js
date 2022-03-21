@@ -9,7 +9,8 @@ module.exports = {
   description: '记录自己的工作学习心得，争取当一条有梦想的咸鱼',
   // base: '/', // 默认'/'。如果你想将你的网站部署到如 https://foo.github.io/bar/，那么 base 应该被设置成 "/bar/",（否则页面将失去样式等文件）
   markdown: {
-    lineNumbers: true // 代码块是否显示行号
+    lineNumbers: true, // 代码块是否显示行号
+    extractHeaders: [ 'h2', 'h3', 'h4', 'h5', 'h6' ], // 使目录栏支持h2~h6标题
   },
   serviceWorker: true, // 是否开启 PWA
   head: [ // 注入到页面<head> 中的标签

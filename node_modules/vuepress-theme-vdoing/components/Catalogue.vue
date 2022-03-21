@@ -13,9 +13,12 @@
         <template v-for="(item, index) in getCatalogueList()">
           <dl v-if="type(item) === 'array'" :key="index" class="inline">
             <dt>
-              <router-link :to="item[2]">{{
-                `${index + 1}. ${item[1]}`
-              }}</router-link>
+              <router-link :to="item[2]"
+                >{{ `${index + 1}. ${item[1]}` }}
+                <span class="title-tag" v-if="item[3]">
+                  {{ item[3] }}
+                </span>
+              </router-link>
             </dt>
           </dl>
           <dl v-else-if="type(item) === 'object'" :key="index">
@@ -28,9 +31,12 @@
               <!-- 二级目录 -->
               <template v-for="(c, i) in item.children">
                 <template v-if="type(c) === 'array'">
-                  <router-link :to="c[2]" :key="i">{{
-                    `${index + 1}-${i + 1}. ${c[1]}`
-                  }}</router-link>
+                  <router-link :to="c[2]" :key="i"
+                    >{{ `${index + 1}-${i + 1}. ${c[1]}` }}
+                    <span class="title-tag" v-if="c[3]">
+                      {{ c[3] }}
+                    </span>
+                  </router-link>
                 </template>
                 <!-- 三级目录 -->
                 <div
@@ -48,6 +54,9 @@
                     :key="`${index + 1}-${i + 1}-${ii + 1}`"
                   >
                     {{ `${index + 1}-${i + 1}-${ii + 1}. ${cc[1]}` }}
+                    <span class="title-tag" v-if="cc[3]">
+                      {{ cc[3] }}
+                    </span>
                   </router-link>
                 </div>
               </template>
@@ -139,6 +148,17 @@ export default {
 </script>
 
 <style scoped lang="stylus" rel="stylesheet/stylus">
+.title-tag
+  // height 1.1rem
+  // line-height 1.1rem
+  border 1px solid $activeColor
+  color $activeColor
+  font-size 0.8rem
+  padding 0 0.35rem
+  border-radius 0.2rem
+  margin-left 0rem
+  transform translate(0, -0.05rem)
+  display inline-block
 dl, dd
   margin 0
 .column-wrapper
