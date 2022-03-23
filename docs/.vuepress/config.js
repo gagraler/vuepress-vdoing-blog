@@ -143,7 +143,6 @@ module.exports = {
        ],
       },
 
-      {text: 'Gitee', link: 'https://gitee.com/keington/'},
       {text: 'Github', link: 'https://github.com/keington/'}
 
     ],
