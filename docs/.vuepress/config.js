@@ -133,9 +133,16 @@ module.exports = {
       //     { text: '系统映像', link: '/pages/1361c7/'}
       //   ],
       // },
-
       // { text: '案例', link: '/pages/5d571c/' },
-      {text: '关于我', link: '/pages/db78e2/'},
+
+        // 关于
+      {
+        text: '关于', items:[
+            {text: '关于我',link: '/pages/db78e2/'},
+            {text: '友情链接', link: '/pages/0f7590/'},
+       ],
+      },
+
       {text: 'Gitee', link: 'https://gitee.com/keington/'},
       {text: 'Github', link: 'https://github.com/keington/'}
 
