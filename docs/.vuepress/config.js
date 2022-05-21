@@ -42,12 +42,6 @@ module.exports = {
     nav: [
       {text: '首页', link: '/'},
 
-      // {
-      //   text: '后端', items: [
-      //
-      //   ],
-      // },
-
       // Java部分
       {
         text: 'Java', items: [
@@ -98,6 +92,19 @@ module.exports = {
         ],
       },
 
+      // 网络安全部分
+      {
+        text: '网络安全', items: [
+          // 挖矿病毒部分
+          {
+            text: '主机安全', items: [
+              {text: 'Centos主机安全加固', link: '/pages/b5a32b/'},
+            ],
+          },
+          // 内核升级
+        ],
+      },
+
       {
         text: '其他', items: [
           // 环境搭建
@@ -126,14 +133,17 @@ module.exports = {
         ],
       },
 
-      // 资源部分
+      // 后端部分
       // {
-      //   text: '资源', items: [
-      //     { text: 'Mysql', link: '/pages/023c74/'},
-      //     { text: '系统映像', link: '/pages/1361c7/'}
+      //   text: '后端', items: [
+      //     {
+      //       text: 'Mysql', items: [
+      //         {text: 'MySql调优', link: '/pages/a32ce8/'},
+      //         {text: 'Linux下Java运行环境搭建', link: '/pages/f22bdb/'},
+      //       ],
+      //     },
       //   ],
       // },
-      // { text: '案例', link: '/pages/5d571c/' },
 
         // 关于
       {
