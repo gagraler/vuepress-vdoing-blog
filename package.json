@@ -1,6 +1,7 @@
 {
   "name": "vuepress-vdoing-blog",
   "version": "1.0.0",
+  "description": "基于vuepress的个人博客系统",
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
