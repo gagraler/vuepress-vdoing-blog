@@ -104,7 +104,7 @@ module.exports = {
           // 安全通告
           {
             text: '安全通告', items: [
-              {text: 'fastjson反序列化漏洞2022-5-23', link: '/pages/42dce9/'},
+              {text: 'Fastjson反序列化漏洞2022-5-23', link: '/pages/42dce9/'},
             ],
           },
         ],
