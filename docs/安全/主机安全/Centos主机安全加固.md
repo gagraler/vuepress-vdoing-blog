@@ -176,7 +176,7 @@ export HISTTIMEFORMAT="%F %T ‘whoami’ "
 > 
 > /etc/pam.d/sshd中第二行添加下列信息
 
-![avatar](../.vuepress/public/img/pam.png)
+![avatar](../../.vuepress/public/img/pam.png)
 
 ```bash
 pam_tally2 --user root  # 查看用户登录失败次数

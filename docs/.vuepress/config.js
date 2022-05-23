@@ -101,7 +101,12 @@ module.exports = {
               {text: 'Centos主机安全加固', link: '/pages/b5a32b/'},
             ],
           },
-          // 内核升级
+          // 安全通告
+          {
+            text: '安全通告', items: [
+              {text: 'fastjson反序列化漏洞2022-5-23', link: '/pages/42dce9/'},
+            ],
+          },
         ],
       },
 
