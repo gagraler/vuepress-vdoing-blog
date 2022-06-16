@@ -80,7 +80,6 @@ module.exports = {
             {
             text: 'Docker', items: [
               {text: 'Docker添加国内地址', link: '/pages/af9ce4/'},
-              {text: 'Linux主机巡检脚本', link: '/pages/11d270/'},
             ],
           },
             // 挖矿病毒部分
@@ -97,6 +96,14 @@ module.exports = {
               {text: '离线升级', link: '/pages/79a802/'},
             ],
           },
+
+            // Kubernetes部分
+            {
+              text: 'Kubernetes', items: [
+                {text: 'Kubernetes架构', link: '/pages/52d291/'},
+              ],
+            }
+
         ],
       },
 
