@@ -75,6 +75,14 @@ module.exports = {
       // 运维部分
       {
         text: '运维', items: [
+
+          // Dcoker
+            {
+            text: 'Docker', items: [
+              {text: 'Docker添加国内地址', link: '/pages/af9ce4/'},
+              {text: 'Linux主机巡检脚本', link: '/pages/11d270/'},
+            ],
+          },
             // 挖矿病毒部分
           {
             text: 'Linux', items: [
@@ -101,12 +109,7 @@ module.exports = {
               {text: 'Centos主机安全加固', link: '/pages/b5a32b/'},
             ],
           },
-          // 安全通告
-          {
-            text: '安全通告', items: [
-              {text: 'Fastjson反序列化漏洞2022-5-23', link: '/pages/42dce9/'},
-            ],
-          },
+
         ],
       },
 
