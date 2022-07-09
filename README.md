@@ -28,8 +28,15 @@ npm install # or yarn install
 npm run dev # or yarn dev
 ```
 
+## 鸣谢
+感谢[JetBrain](https://www.jetbrains.com/)提供的WebStorm及IntelliJ IDEA授权License。
+
+感谢[VuePress](https://vuepress.vuejs.org/)提供的开放源代码。
+
+感谢[许高仪](https://github.com/xugaoyi/vuepress-theme-vdoing.git)提供的Vuepress模板。
+
 ## 联系我
-如有问题请在lssues提问，会不定期解答，或者也可以发送[邮件](mailto:keington@outlook.com)
+如有问题请在issues提问，会不定期解答，或者也可以发送[邮件](mailto:keington@outlook.com)
 
 ## LICENSE & Copyright
 [MIT License](https://github.com/keington/vuepress-vdoing-blog/blob/b21bac74e61c04b6b71f024ebf0ab14ebe7f91c5/LICENSE)
