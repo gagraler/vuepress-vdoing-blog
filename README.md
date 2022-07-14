@@ -1,9 +1,5 @@
 <h2 align="center">Vuepress-Vdoing-Blog</h2>
 
-<p align="center">
-  <a href="https://github.com/keington/vuepress-vdoing-blog/stargazers"><img src="https://img.shields.io/github/stars/keington/vuepress-vdoing-blog?logo=ReverbNation&logoColor=rgba(255,255,255,.6)" alt="GitHub stars"></a>
-</p>
-
 * [效果：XuHuaian,s blog](https://dbsecurity.com.cn/)
 * [来源：许高仪](https://github.com/xugaoyi/vuepress-theme-vdoing.git)
 
