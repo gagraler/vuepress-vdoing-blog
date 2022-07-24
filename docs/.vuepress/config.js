@@ -100,6 +100,7 @@ module.exports = {
             // Kubernetes部分
             {
               text: 'Kubernetes', items: [
+                // {text: 'Kubernetes安装', link: 'pages/8f75c6/'},
                 {text: 'Kubernetes架构', link: '/pages/52d291/'},
               ],
             }
