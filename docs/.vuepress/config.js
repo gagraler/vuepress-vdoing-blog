@@ -76,12 +76,13 @@ module.exports = {
       {
         text: '运维', items: [
 
-          // Dcoker
-            {
-            text: 'Docker', items: [
-              {text: 'Docker添加国内地址', link: '/pages/af9ce4/'},
-            ],
-          },
+          // Docker
+          // {
+          //   text: 'Docker', items: [
+          //     {text: 'Docker添加国内地址', link: '/pages/af9ce4/'},
+          //   ],
+          // },
+
             // 挖矿病毒部分
           {
             text: 'Linux', items: [
@@ -111,6 +112,13 @@ module.exports = {
       // 网络安全部分
       {
         text: '网络安全', items: [
+            // 网络安全部分
+          {
+            text: '网络安全', items: [
+              {text: '浅谈网络安全', link: '/pages/bd3bd3/'},
+            ]
+          },
+
           // 挖矿病毒部分
           {
             text: '主机安全', items: [

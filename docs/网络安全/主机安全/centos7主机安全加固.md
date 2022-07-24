@@ -1,5 +1,5 @@
 ---
-title: Centos7主机安全加固
+title: centos7主机安全加固
 date: 2022-05-22 00:02:08
 permalink: /pages/b5a32b/
 categories:
