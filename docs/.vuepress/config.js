@@ -76,13 +76,6 @@ module.exports = {
       {
         text: '运维', items: [
 
-          // Docker
-          // {
-          //   text: 'Docker', items: [
-          //     {text: 'Docker添加国内地址', link: '/pages/af9ce4/'},
-          //   ],
-          // },
-
             // 挖矿病毒部分
           {
             text: 'Linux', items: [
@@ -90,11 +83,19 @@ module.exports = {
               {text: 'Linux主机巡检脚本', link: '/pages/11d270/'},
             ],
           },
+
             // 内核升级
           {
             text: 'Centos内核升级', items: [
               {text: '在线升级', link: '/pages/42150c/'},
               {text: '离线升级', link: '/pages/79a802/'},
+            ],
+          },
+
+          // MySQL部分
+          {
+            text: 'MySQL', items: [
+              {text: 'MySQL主从同步', link: '/pages/af9ce4/'},
             ],
           },
 
