@@ -80,15 +80,6 @@ module.exports = {
           {
             text: 'Linux', items: [
               {text: 'Linux下挖矿病毒排杀过程', link: '/pages/af9ce4/'},
-              {text: 'Linux主机巡检脚本', link: '/pages/11d270/'},
-            ],
-          },
-
-            // 内核升级
-          {
-            text: 'Centos内核升级', items: [
-              {text: '在线升级', link: '/pages/42150c/'},
-              {text: '离线升级', link: '/pages/79a802/'},
             ],
           },
 
@@ -104,6 +95,7 @@ module.exports = {
               text: 'Kubernetes', items: [
                 // {text: 'Kubernetes安装', link: 'pages/8f75c6/'},
                 {text: 'Kubernetes架构', link: '/pages/52d291/'},
+                {text: 'Kubernets基于RBAC的认证与授权', link: '/pages/77e71c/'},
               ],
             }
 
@@ -132,13 +124,6 @@ module.exports = {
 
       {
         text: '其他', items: [
-          // 环境搭建
-          {
-            text: '环境搭建', items: [
-              {text: 'Windows下Java开发环境搭建', link: '/pages/a32ce8/'},
-              {text: 'Linux下Java运行环境搭建', link: '/pages/f22bdb/'},
-            ],
-          },
 
           // 博客搭建
           {
@@ -164,7 +149,6 @@ module.exports = {
       //     {
       //       text: 'Mysql', items: [
       //         {text: 'MySql调优', link: '/pages/a32ce8/'},
-      //         {text: 'Linux下Java运行环境搭建', link: '/pages/f22bdb/'},
       //       ],
       //     },
       //   ],
