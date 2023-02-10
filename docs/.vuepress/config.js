@@ -79,14 +79,16 @@ module.exports = {
             // 挖矿病毒部分
           {
             text: 'Linux', items: [
-              {text: 'Linux下挖矿病毒排杀过程', link: '/pages/af9ce4/'},
+              {text: '挖矿病毒排杀过程', link: '/pages/af9ce4/'},
+              {text: '主机巡检脚本', link: '/pages/11d270/'},
             ],
           },
 
           // MySQL部分
           {
             text: 'MySQL', items: [
-              {text: 'MySQL主从同步', link: '/pages/af9ce4/'},
+              {text: '主从同步', link: '/pages/af9ce4/'},
+              {text: '查询关键字详解', link: '/pages/f5d269/'},
             ],
           },
 
@@ -171,7 +173,7 @@ module.exports = {
     lastUpdated: '上次更新', // 更新的时间，及前缀文字   string | boolean (取值为git提交时间)
 
     // 以下配置是Vdoing主题改动的和新增的配置
-    sidebar: {mode: 'structuring', collapsable: false}, // 侧边栏  'structuring' | { mode: 'structuring', collapsable: Boolean} | 'auto' | 自定义    温馨提示：目录页数据依赖于结构化的侧边栏数据，如果你不设置为'structuring',将无法使用目录页
+    sidebar: {mode: 'structuring', collapsable: true}, // 侧边栏  'structuring' | { mode: 'structuring', collapsable: Boolean} | 'auto' | 自定义    温馨提示：目录页数据依赖于结构化的侧边栏数据，如果你不设置为'structuring',将无法使用目录页
 
     sidebarOpen: true, // 初始状态是否打开侧边栏，默认true
     updateBar: { // 最近更新栏
@@ -227,9 +229,9 @@ module.exports = {
     footer: { // 页脚信息
       createYear: 2020, // 博客创建年份
       // 博客版权信息，支持a标签
-      copyrightInfo: '许怀安 | MIT License <br> <a target="_blank" href="http://beian.miit.gov.cn/" >青ICP备2022000072号-1</a>' +
-                     '<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=63010302000386" >' +
-                     ' | 青公网安备 63010302000386号</a>'
+      copyrightInfo: '许怀安 | MIT License </br>' +
+                     '<a target="_blank" href="http://beian.miit.gov.cn/" >青ICP备2022000072号-1</a>' +
+                     '<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=63010302000386" > | 青公网安备 63010302000386号</a>'
 },
 
 htmlModules,
