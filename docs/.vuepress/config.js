@@ -98,6 +98,7 @@ module.exports = {
                 // {text: 'Kubernetes安装', link: 'pages/8f75c6/'},
                 {text: 'Kubernetes架构', link: '/pages/52d291/'},
                 {text: 'Kubernets基于RBAC的认证与授权', link: '/pages/77e71c/'},
+                {text: 'Kubeadm部署 Kubernetes(v1.27.2)集群', link: '/pages/157d76/'}
               ],
             }
 
