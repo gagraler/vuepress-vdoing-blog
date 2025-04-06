@@ -165,7 +165,7 @@ module.exports = {
        ],
       },
 
-      {text: 'Github', link: 'https://github.com/keington/'}
+      {text: 'Github', link: 'https://github.com/gagraler/'}
 
     ],
     sidebarDepth: 2, // 侧边栏显示深度，默认1，最大2（显示到h3标题）
@@ -192,7 +192,7 @@ module.exports = {
 
     author: { // 文章默认的作者信息，可在md文件中单独配置此信息 String | {name: String, href: String}
       name: '许怀安', // 必需
-      link: 'https://github.com/keington', // 作者链接（可选）
+      link: 'https://github.com/gagraler', // 作者链接（可选）
     },
 
     // 博主信息 (显示在首页侧边栏)
@@ -211,28 +211,16 @@ module.exports = {
           link: 'mailto:keington@outlook.com'
         },
         {
-          iconClass: 'icon-QQ',
-          title: 'QQ',
-          link: 'tencent://message/?uin=qq1950974755&Site=Sambow&Menu=yes'
-        },
-        {
           iconClass: 'icon-github',
           title: 'Github',
-          link: 'https://github.com/keington/'
-        },
-        {
-          iconClass: 'icon-gitee',
-          title: 'Gitee',
-          link: 'https://gitee.com/keington/'
+          link: 'https://github.com/gagraler/'
         },
       ]
     },
     footer: { // 页脚信息
       createYear: 2020, // 博客创建年份
       // 博客版权信息，支持a标签
-      copyrightInfo: '许怀安 | MIT License </br>' +
-                     '<a target="_blank" href="http://beian.miit.gov.cn/" >青ICP备2022000072号-1</a>' +
-                     '<a target="_blank" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=63010302000386" > | 青公网安备 63010302000386号</a>'
+      copyrightInfo: '许怀安 | MIT License '
 },
 
 htmlModules,
