@@ -198,7 +198,7 @@ export default defineConfig({
       {
         text: 'About', items:[
             {text: '关于我',link: 'about/aboutMe'},
-            {text: '友情链接', link: 'about/openSource'},
+            {text: '开源项目', link: 'about/openSource'},
        ],
       },
     ],
