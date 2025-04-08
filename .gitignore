@@ -4,3 +4,12 @@
 /.idea
 
 /.git
+
+/package-lock.json
+
+/.DS_Store
+
+/.env
+
+docs/.vitepress/cache
+/docs/.vitepress/dist

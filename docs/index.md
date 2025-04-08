@@ -1,13 +1,23 @@
 ---
-home: true
-heroImage: /images/logo.jpg
-heroText: XuHuaian,s Blog
-tagline: 记录自己的工作学习心得，争取当一条有梦想的咸鱼
-actionText: 开始探索之旅 →
-actionLink: /categories/
-# auto => 网格纹背景(有bodyBgImg时无背景)，默认 | none => 无 | '大图地址' | background: 自定义背景样式       
-# 提示：如发现文本颜色不适应你的背景时可以到palette.styl修改$bannerTextColor变量
-bannerBg: none 
+# https://vitepress.dev/reference/default-theme-home-page
+layout: home
+
+hero:
+  name: "XuHuaian,s Blog"
+  # text: "Blog"
+  tagline: 记录自己的工作学习心得，争取当一条有梦想的咸鱼
+  image:
+    src: /.vitepress/imgs/logo.jpg
+    alt: logo
+    width: 200
+    height: 200
+  actions:
+    - theme: brand
+      text: 开始探索之旅 →
+      link: /
+    - theme: alt
+      text: View on GitHub
+      link: https://github.com/gagraler
 
 features:
 - title: 关于我
@@ -16,11 +26,10 @@ features:
   details: 宅！ 宅！ 宅！
 - title: 记录生活
   details: 记录生活中的点点滴滴，记录工作跟学习中的知识及BUG
-
-# 文章列表显示方式: detailed 默认，显示详细版文章列表（包括作者、分类、标签、摘要、分页等）| simple => 显示简约版文章列表（仅标题和日期）| none 不显示文章列表
 postList: simple
 
 ---
 <ClientOnly>
   <WebInfo/>
 </ClientOnly>
+
