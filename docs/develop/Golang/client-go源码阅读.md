@@ -6,13 +6,14 @@ date: 2024-08-18 21:43:00
 
 # client-go源码阅读
 
-Source Code From [https://github.com/kubernetes/client-go/releases/tag/kubernetes-1.21.0](https://github.com/kubernetes/client-go/releases/tag/kubernetes-1.21.0)
+[[toc]]
 
-参考Kubernetes源码分析（基于Kubernetes 1.21版本）
+
+>[基于Kubernetes 1.21版本](https://github.com/kubernetes/client-go/releases/tag/kubernetes-1.21.0)
 
 ## client-go源码结构
 | 源码目录 | 说明 | 备注 |
-| :--- | :--- | :--- |
+| :---: | :---: | :---: |
 | applyconfigurations |  |  |
 | discovery | 提供DiscoveryClient发现客户端 |  |
 | dynamic | 提供DynamicClient动态客户端 |  |

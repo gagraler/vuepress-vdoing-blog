@@ -14,9 +14,9 @@ export default defineConfig({
     ['link', {rel: 'icon', href: '/favicon.png'}], //favicon，资源放在public文件夹
   ],
 
-  markdown: {
-    lineNumbers: true, // 代码块是否显示行号
-  },
+  // markdown: {
+  //   lineNumbers: true, // 代码块是否显示行号
+  // },
   
   // 主题配置
   // https://vitepress.dev/reference/default-theme-config
@@ -148,9 +148,23 @@ export default defineConfig({
 
       {
         text: 'Cloud Native', items: [
-          {text: 'Kubernetes', link: '/pages/52d291/'},
-          {text: 'Kubernets基于RBAC的认证与授权', link: '/pages/77e71c/'},
-          {text: 'Kubeadm部署 Kubernetes(v1.27.2)集群', link: '/pages/157d76/'}
+
+          {
+            text: 'Kubernetes', items: [
+              {text: 'Kubernetes架构', link: '/cloud-navite/1.Kubernetes/01.Kubernetes架构'},
+              {text: 'Kubernetes基于RBAC的认证与授权', link: '/cloud-navite/1.Kubernetes/2.Kubernetes基于RBAC的认证与授权'},
+              {text: 'Kubeadm部署 Kubernetes(v1.27.2)集群', link: '/cloud-navite/1.Kubernetes/3.Kubeadm部署 Kubernetes(v1.27.2)集群'},
+            ]
+          },
+
+          {
+            text: 'Istio', items: [
+              {text: 'Istio笔记', link: '/cloud-navite/2.istio/1.istio笔记'},
+              {text: 'Ingress与Egress', link: '/cloud-native/2.istio/2.ingress与egress'},
+              {text: 'Istio Gateway', link: '/cloud-native/2.istio/3.istioGateway'},
+              {text: 'Istio多集群管理', link: '/cloud-native/2.istio/4.istio多集群管理'},
+            ]
+          },
         ],
       },
 
@@ -161,18 +175,9 @@ export default defineConfig({
             // 挖矿病毒部分
           {
             text: 'Linux', items: [
-              {text: '挖矿病毒排杀过程', link: '/pages/af9ce4/'},
-              {text: '主机巡检脚本', link: '/pages/11d270/'},
+              {text: '挖矿病毒排杀过程', link: '/operation/Linux/1.Linux下挖矿病毒排杀过程'},
             ],
           },
-
-          // MySQL部分
-          {
-            text: 'MySQL', items: [
-              {text: '主从同步', link: '/pages/af9ce4/'},
-              {text: '查询关键字详解', link: '/pages/f5d269/'},
-            ],
-          }, 
         ],
       },
 
@@ -181,8 +186,8 @@ export default defineConfig({
         text: 'Database', items: [
           {
             text: 'MySQL', items: [
-              {text: '主从同步', link: '/pages/af9ce4/'},
-              {text: '查询关键字详解', link: '/pages/f5d269/'},
+              {text: '主从同步', link: '/database/1.MySQL/1.主从同步'},
+              {text: '查询关键字详解', link: '/database/1.MySQL/2.查询关键字详解'},
             ],
           },
           {
@@ -193,6 +198,18 @@ export default defineConfig({
           },
         ]
         },
+
+        {
+          text: 'Netwok Security', items: [
+            {
+              text: '主机安全', items: [
+                {text: 'centos基线加固', link: '/network-security/主机安全/1.centos基线加固'},
+                
+              ],
+            },
+            {text: '浅谈网络安全',link: '/network-security/2.浅谈网络安全'},
+          ]
+          },
 
         // 关于
       {

@@ -6,16 +6,18 @@ date: 2022-01-10 21:59:38
 
 # RPC与gRPC
 
+[[toc]]
+
 ## 1. 背景知识
-#### 1.1 RPC是啥
-&ensp;&ensp;&ensp;&ensp;RPC (Remote Procedure Calls) 远程过程调用。本地调用远程方法，比较直接的做法是服务端暴露出 Restful 接口，客户端发 http request 去调用，RPC 的过程简单来看可以理解成是对这个操作进行的一层封装。
+### 1.1 RPC是啥
+RPC (Remote Procedure Calls) 远程过程调用。本地调用远程方法，比较直接的做法是服务端暴露出 Restful 接口，客户端发 http request 去调用，RPC 的过程简单来看可以理解成是对这个操作进行的一层封装。
 RPC 调用过程如下图所示，RPC 对服务调用方屏蔽掉网络请求、消息编码、数据传输等工作，提供一个代理对象给调用方，使服务调用方调用远程方法时如同调用本地方法一样简洁。
 
 ![avatar](../../.vitepress/imgs/rpc.png)
 
-#### 1.2 RPC 框架
+### 1.2 RPC 框架
 
-&ensp;&ensp;&ensp;&ensp;RPC 抽象来看可以归纳为两方面问题： **1.调用方与提供方协议约定问题； 2.网络传输问题** ，解决这两块基本问题后，还得需要工程落地，解决服务发现、负载均衡、限流熔断等等问题，于是有了 RPC 框架的出现。
+RPC 抽象来看可以归纳为两方面问题： **1.调用方与提供方协议约定问题； 2.网络传输问题** ，解决这两块基本问题后，还得需要工程落地，解决服务发现、负载均衡、限流熔断等等问题，于是有了 RPC 框架的出现。
 
 ![avatar](../../.vitepress/imgs/rpc2.png)
 
@@ -29,7 +31,7 @@ RPC 调用过程如下图所示，RPC 对服务调用方屏蔽掉网络请求、
 >
 > + 网络传输: 提供 TCP 长链接传输、HTTP 通信等功能。
 
-###### 1.2.1 服务治理（SOA）
+#### 1.2.1 服务治理（SOA）
 
 服务治理解决什么问题？
 
@@ -41,7 +43,7 @@ RPC 调用过程如下图所示，RPC 对服务调用方屏蔽掉网络请求、
 
 类似 DNS 的机制，服务提供方向注册中心进行注册，调用方订阅服注册中心；注册中心拿到当前提供方服务的地址后推送给调用方。
 
-#### 1.3 RPC vs HTTP Service
+### 1.3 RPC vs HTTP Service
 
 相比于 HTTP 服务，RPC 具有以下优势：
 + 网络传输方面：基于 TCP 长链接，省去了 HTTP 连接建立过程中的性能损耗，提高传输效率；
@@ -59,17 +61,17 @@ RPC 调用过程如下图所示，RPC 对服务调用方屏蔽掉网络请求、
 2. 对于消耗特定资源的（例如 GPU/CPU/大内存资源），有特殊依赖的（比如运行环境需要依赖外部的 ffmpeg），集中实现效率比较高的（比如某个业务集中到几台机器，可以使用大内存缓存等）,选 RPC；
 3. 一些经常变化的业务逻辑，依赖很广泛，又需要实现可以收敛且能随时更新，选择 RPC。
 
-#### 1.4 HTTP/2 协议
+### 1.4 HTTP/2 协议
 
 gRPC 框架的网络传输部分依赖 HTTP/2 协议，为理解 gRPC，先来了解一下 HTTP/2 协议。
 
-###### 1.4.1 HTTP 发展历史
+##### 1.4.1 HTTP 发展历史
 
 + HTTP/1.0：链接无法复用，每次请求都需要经过三次握手，重新建立连接，增加延迟；
 + HTTP/1.1：Headers 中增加`keep-alive` 标识，可以复用一部分连接，但域名分片等情况下，仍需要建立多次连接，耗费资源；
 + HTTP/2.0：为提高传输性能，HTTP/2.0 在客户端和服务端之间只建立一个链接(connection)。
 
-###### 1.4.2 HTTP/2.0 新特性
+##### 1.4.2 HTTP/2.0 新特性
 
 HTTP/2.0 协议 2015 年发布，完整的升级涉及到的内容较多，这里只挑部分特性了解一下。
 
@@ -107,7 +109,7 @@ HTTP/1.x 的请求包和响应包，都是由起始行、Headers 和 Body 组成
 ![avatar](../../.vitepress/imgs/header.jpg)
 
 ## 2. gRPC
-#### 2.1 gRPC 特性
+### 2.1 gRPC 特性
 + 优势
 > + 支持多种语言；
 >
@@ -120,10 +122,10 @@ HTTP/1.x 的请求包和响应包，都是由起始行、Headers 和 Body 组成
 + 劣势
 > + 服务治理相关能力缺失，负载均衡和服务发现等功能需要开发者扩展实现。
 
-#### 2.2 gRPC 核心概念
-###### 2.2.1 服务调用模式
+### 2.2 gRPC 核心概念
+##### 2.2.1 服务调用模式
 
-&ensp;&ensp;&ensp;&ensp;gRPC 底层通信依赖于 HTTP/2 协议，由于 HTTP/2 协议是一个支持双向流的协议，因此 gRPC 在 API 的设计上也才用了流的方式。gRPC 中允许定义四种服务调用模式：
+gRPC 底层通信依赖于 HTTP/2 协议，由于 HTTP/2 协议是一个支持双向流的协议，因此 gRPC 在 API 的设计上也才用了流的方式。gRPC 中允许定义四种服务调用模式：
 
 1. Unary 调用模式：响应-请求模式，客户端发送请求给服务端，服务端应答；
 ::: tip 示例
@@ -145,9 +147,9 @@ rpc LotsOfGreetings(stream HelloRequest) returns (HelloResponse) { }
 rpc BidiHello(stream HelloRequest) returns (stream HelloResponse){ }
 :::
 
-###### 2.2.2 Protobuf
+##### 2.2.2 Protobuf
 
-&ensp;&ensp;&ensp;&ensp;gRPC 默认使用 Protocol Buffers (Protobuf) 作为接口定义语言，来描述服务接口和消息结构。Protocol Buffers 是一个可独立使用的序列化框架，它并不与 gRPC 框架绑定，任何需要支持多语言的 RPC 框架都可以选择使用 Protocol Buffers 作为序列化框架。
+gRPC 默认使用 Protocol Buffers (Protobuf) 作为接口定义语言，来描述服务接口和消息结构。Protocol Buffers 是一个可独立使用的序列化框架，它并不与 gRPC 框架绑定，任何需要支持多语言的 RPC 框架都可以选择使用 Protocol Buffers 作为序列化框架。
 
 Protocol Buffers 的使用主要包括:
 
@@ -157,10 +159,10 @@ Protocol Buffers 的使用主要包括:
 > 
 > + 使用 Protocol Buffers 的 API 进行序列化和反序列化。
 
-######## 支持的数据结构
+**0x1 支持的数据结构**
 + 支持主流语言常用数据结构，考虑到跨语言特性，对于特定语言的数据结构并不提供支持，如 Java 的 Exception 对象。
 
-######## 基本数据类型
+**0x2 基本数据类型**
 | protobuf |    C++    |    Java    |
 |:--------:|:---------:|:----------:|
 |  double  |  double   |   double   |
@@ -171,9 +173,8 @@ Protocol Buffers 的使用主要包括:
 |  bytes   |  string   | ByteString |
 |  bool    |   bool    |  boolean   |
 |   … 	    |    … 	    |     …      |
-表1. Protobuf 基本数据类型对照表
 
-######## 复杂数据类型
+**0x3 复杂数据类型**
 
 + 数组类型
 
@@ -207,20 +208,21 @@ map<string, ValueType> typeMap = 0;
 
 详细语法参考：[Language Guide (proto3)](https://developers.google.com/protocol-buffers/docs/proto3)
 
-######## 代码生成
+**0x4 代码生成**
 
 .proto 文件中定义的每个 service ，protoc 会生成一个名为`{service_name}Grpc`的类，这个类存放在`java_packag`指定的包结构下。
 
 下载 protoc 后，可以通过命令行调用 protoc 来生成桩代码，或者使用官方推荐的更优雅的方式，配置 maven 或者 gradle 在项目编译时自动生成桩代码。maven 配置见下文。
 
 ## 3. Hello gRPC
-&ensp;&ensp;&ensp;&ensp;以下参考 gRPC 官方文档的 demo 学习 gRPC 基本用法，实现服务端(Java)与客户端(Java)之间四种服务调用模式通信。
+以下参考 gRPC 官方文档的 demo 学习 gRPC 基本用法，实现服务端(Java)与客户端(Java)之间四种服务调用模式通信。
 
-#### 3.1 服务端
-###### 开发环境配置
+### 3.1 服务端
+##### 3.1.1 开发环境配置
 1. 下载 protoc 编译器，配置环境变量，安装一个支持 proto 语法高亮的 IDEA 插件；
 
 2. 新建 maven 项目，配置 pom.xml 添加对 Protobuf 的依赖：
+::: details 点我查看代码
 ```xml
 <dependencies>
     <dependency>
@@ -250,12 +252,16 @@ map<string, ValueType> typeMap = 0;
     </dependency>
 </dependencies>
 ```
+:::
+
 3. 建立源码目录
 
 手动建立目录`src/main/java`保存服务实现源码，`src/main/proto`保存.proto 文件，注意这里要把 /proto 这个目录设置成源文件目录(Mark Directory as -> Sources Root)。
 
-###### 服务定义
+##### 3.1.2 服务定义
 在/proto 目录下，新建`test.proto`文件，定义四个 RPC 方法，分别对应四种服务类型，以及`request`和`response`的类型：
+
+::: details 点我查看代码
 ```proto
 syntax = "proto3";    // 指定语法为 proto3 格式
 option java_package = "me.misscoconut.rpc";  // 生成 Java 类文件所在包名
@@ -281,8 +287,11 @@ message ProfileResponseList{
   repeated ProfileResponse response = 1;
 }
 ```
-###### 生成Java桩代码
+::: details 点我查看代码
+##### 3.1.3 生成Java桩代码
 在 pom.xml 配置 protobuf 插件:
+
+::: details 点我查看代码
 ```xml
 <build>
        <extensions>
@@ -317,12 +326,15 @@ message ProfileResponseList{
        </plugins>
    </build>
 ```
+:::
+
 同步一下，maven compile 项目。/target/generated-sources 下生成的 java 桩代码，复制到 /src/main/java 下。
 
-###### 服务端实现
+##### 3.1.4服务端实现
 服务接口实现类继承自`GetProfileServiceImplBase`，重写基类里边的各服务方法。
 
 + 服务端创建:
+::: details 点我查看代码
 ```java
 private void start() throws IOException {
         // 指定 grpc 服务器端口，绑定服务接口实现，启动 grpc server
@@ -344,7 +356,10 @@ private void start() throws IOException {
         });
     }
 ```
+:::
+
 + 服务接口实现
+::: details 点我查看代码
 ```java
 private static class GetProfileServiceImpl extends GetProfileServiceGrpc.GetProfileServiceImplBase {
        // Simple RPC
@@ -419,8 +434,9 @@ private static class GetProfileServiceImpl extends GetProfileServiceGrpc.GetProf
        }
    }
 ```
+:::
 
-#### 3.2 服务端创建流程
+### 3.2 服务端创建流程
 服务端创建过程主要涉及`ServerBuilder、NettyServerProvider、GetProfileServiceImpl`三个对象。
 
 大致流程：
@@ -433,13 +449,14 @@ private static class GetProfileServiceImpl extends GetProfileServiceGrpc.GetProf
 
 3. 创建 gRPC Server，用于 RPC 消息的统一调度和处理。
 
-#### 3.3 客户端
-###### 请求流程
+### 3.3 客户端
+##### 3.3.1 请求流程
 1. 指定 ip:port 创建`ManagedChannelImpl`;
 2. 创建客户端 Stub；
 3. 使用客户端 Stub 发起 RPC 请求获得响应。
 
-###### 主要代码
+##### 3.3.2 主要代码
+::: details 点我查看代码
 ```java
 public static void main(String[] args) {
     ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:23333")
@@ -527,7 +544,8 @@ public static void main(String[] args) {
     channel.shutdown();
 }
 ```
-#### 3.4 客户端调用流程
+:::
+### 3.4 客户端调用流程
 
 >1.客户端 Stub(GetProfileServiceBlockingStub) 调用 getUsernameByID(request)，发起 RPC 调用；
 >
@@ -539,8 +557,8 @@ public static void main(String[] args) {
 >
 >5.回调 GrpcFuture 的 set(Response) 方法，唤醒阻塞的客户端调用线程，获取 RPC 响应。
 
-四、Bug记录
-#### 4.1 找不到类`io.grpc.BindableService`
+## 4. 问题
+### 4.1 找不到类`io.grpc.BindableService`
 ```java
 java.lang.NoClassDefFoundError: io/grpc/BindableService
 	at java.lang.Class.getDeclaredMethods0(Native Method)
@@ -572,7 +590,7 @@ Process finished with exit code 1
 
 重新安装一致的版本。
 
-#### 4.2 参考链接
+## 5. 参考链接
 [gRPC系列(三) 如何借助HTTP2实现传输](https://zhuanlan.zhihu.com/p/161577635)
 <br/>[深入理解Protobuf3协议原理](https://juejin.cn/post/6844904007811465229)
 

@@ -1,12 +1,11 @@
 ---
-title: centos7主机安全加固
+title: centos基线加固
 date: 2022-05-22 00:02:08
-permalink: /pages/b5a32b/
-categories:
-  - 安全
-tags:
-  - 
 ---
+
+# centos基线加固
+
+[[toc]]
 
 ::: tip Tips
 本文从Centos 7.x系列系统的16个角度来加固主机的安全性，不足之处，敬请谅解。
